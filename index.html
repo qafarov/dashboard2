@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>template</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="icon-download" viewbox="0 0 24 24">
+                <path d="M21 14c-0.6 0-1 0.4-1 1v4c0 0.6-0.4 1-1 1h-14c-0.6 0-1-0.4-1-1v-4c0-0.6-0.4-1-1-1s-1 0.4-1 1v4c0 1.7 1.3 3 3 3h14c1.7 0 3-1.3 3-3v-4c0-0.6-0.4-1-1-1z"></path>
+                <path d="M11.3 15.7c0.1 0.1 0.2 0.2 0.3 0.2 0.1 0.1 0.3 0.1 0.4 0.1s0.3 0 0.4-0.1c0.1-0.1 0.2-0.1 0.3-0.2l5-5c0.4-0.4 0.4-1 0-1.4s-1-0.4-1.4 0l-3.3 3.3v-9.6c0-0.6-0.4-1-1-1s-1 0.4-1 1v9.6l-3.3-3.3c-0.4-0.4-1-0.4-1.4 0s-0.4 1 0 1.4l5 5z"></path>
+            </symbol>
+            <symbol id="icon-triangle-left" viewbox="0 0 20 20">
+                <path d="M14 5v10l-9-5 9-5z"></path>
+            </symbol>
+            <symbol id="icon-triangle-right" viewbox="0 0 20 20">
+                <path d="M15 10l-9 5v-10l9 5z"></path>
+            </symbol>
+            <symbol id="icon-play" viewbox="0 0 32 32">
+                <path d="M6 4l20 12-20 12z"></path>
+            </symbol>
+            <symbol id="icon-pause" viewbox="0 0 32 32">
+                <path d="M4 4h10v24h-10zM18 4h10v24h-10z"></path>
+            </symbol>
+        </defs>
+    </svg>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-header">
+                        <span class="row-title">
+                            Zənglərin statistikası
+                        </span>
+                        <div class="interval-wrapper">
+                            <button class="time-btn time-btn-active">Gün</button>
+                            <button class="time-btn">Həftə</button>
+                            <button class="time-btn">Ay</button>
+                            <button class="time-btn">İl</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="side-block sb-green">
+                        <span class="block-title">Bütün müracitlər</span>
+                        <div class="block-content">
+                            <span class="block-num">
+                                213
+                            </span>
+                            <div class="block-sub-detail">
+                                <div class="block-arrow-up" style="border-bottom: 10px solid white"></div>
+                                <div class="block-sub-info">
+                                    Artım 23%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side-block sb-white">
+                        <span class="block-title">Bütün müracitlər</span>
+                        <div class="block-content">
+                            <span class="block-num">
+                                3197
+                            </span>
+                            <div class="block-sub-detail">
+                                <div class="block-arrow-up" style="border-bottom: 10px solid #5fcb75"></div>
+                                <div class="block-sub-info">
+                                    Artım 23%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="center-block">
+                        <div class="block-header">
+                            <span class="block-title">Müraciətlərin təsnifatı</span>
+                            <button class="quest-btn">?</button>
+                        </div>
+                        <div class="center-block-content">
+                            <div class="chart-wrapper">
+                                <canvas id="doughnut-chart" width="30" height="30"></canvas>
+                                <div class="chart-center">
+                                    <span class="chart-total">4531</span>
+                                    <span class="chart-subtitle">Bütün zənglər</span>
+                                </div>
+                            </div>
+                            <div class="chart-detail-wrapper">
+                                <div class="cdw-row">
+                                    <div class="chart-det-box">
+                                        <div class="det-num">1549</div>
+                                        <div class="chart-subtitle">Təcili</div>
+                                    </div>
+                                    <div class="chart-det-box">
+                                        <div class="det-num">1549</div>
+                                        <div class="chart-subtitle">Səhvən</div>
+                                    </div>
+                                </div>
+                                <div class="cdw-row">
+                                    <div class="chart-det-box">
+                                        <div class="det-num">1549</div>
+                                        <div class="chart-subtitle">Əməliyyat</div>
+                                    </div>
+                                    <div class="chart-det-box">
+                                        <div class="det-num">1549</div>
+                                        <div class="chart-subtitle">Cavab gözləyən</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="side-block sb-white">
+                        <span class="block-title">Bütün müracitlər</span>
+                        <div class="block-content">
+                            <span class="block-num">
+                                46
+                            </span>
+                            <div class="block-sub-detail">
+                                <div class="block-arrow-down" style="border-top: 10px solid #f15b40"></div>
+                                <div class="block-sub-info">
+                                    Artım 23%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side-block sb-white">
+                        <span class="block-title">Bütün müracitlər</span>
+                        <div class="block-content">
+                            <span class="block-num">
+                                87
+                            </span>
+                            <div class="block-sub-detail">
+                                <div class="block-arrow-up" style="border-bottom: 10px solid #5fcb75"></div>
+                                <div class="block-sub-info">
+                                    Artım 23%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-header">
+                        <span class="row-title">
+                            Zənglərin jurnalı
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="call-wrapper">
+                        <table id="call-history">
+                            <thead>
+                                <tr>
+                                    <th>Müraciət edən</th>
+                                    <th>Tarix / Vaxt</th>
+                                    <th>Zəng növü</th>
+                                    <th>Telefon nömrəsi</th>
+                                    <th>Operator</th>
+                                    <th>Səs faylı</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #5fcb75"></span>Səhvən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>
+                                        <div class="audio-player">
+                                            <div class="audio-wrapper">
+                                                <audio class="audio-file" id="audio1">
+                                                    <source src="./assets/sound/sound.mp3">
+                                                </audio>
+                                            </div>
+                                            <button class="player-play">
+                                                <svg class="icon icon-play">
+                                                    <use xlink:href="#icon-play"></use>
+                                                </svg>
+                                            </button>
+                                            <span class="audio-length">00:00</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #0085d4"></span>Cavab gözləyən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>
+                                        <div class="audio-player">
+                                            <div class="audio-wrapper">
+                                                <audio class="audio-file" id="audio2">
+                                                    <source src="./assets/sound/sound.mp3">
+                                                </audio>
+                                            </div>
+                                            <button class="player-play">
+                                                <svg class="icon icon-play">
+                                                    <use xlink:href="#icon-play"></use>
+                                                </svg>
+                                            </button>
+                                            <span class="audio-length">00:00</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #f15b40"></span>Əməliyyat</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #0085d4"></span>Cavab gözləyən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #f15b40"></span>Əməliyyat</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #5fcb75"></span>Səhvən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #0085d4"></span>Cavab gözləyən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #f15b40"></span>Əməliyyat</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #0085d4"></span>Cavab gözləyən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #f15b40"></span>Əməliyyat</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #5fcb75"></span>Səhvən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #0085d4"></span>Cavab gözləyən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #f15b40"></span>Əməliyyat</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #0085d4"></span>Cavab gözləyən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #f15b40"></span>Əməliyyat</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #5fcb75"></span>Səhvən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #0085d4"></span>Cavab gözləyən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #f15b40"></span>Əməliyyat</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #0085d4"></span>Cavab gözləyən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #f15b40"></span>Əməliyyat</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #f15b40"></span>Əməliyyat</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #5fcb75"></span>Səhvən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #0085d4"></span>Cavab gözləyən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #f15b40"></span>Əməliyyat</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #0085d4"></span>Cavab gözləyən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #f15b40"></span>Əməliyyat</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #5fcb75"></span>Səhvən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #0085d4"></span>Cavab gözləyən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #f15b40"></span>Əməliyyat</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #0085d4"></span>Cavab gözləyən</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                                <tr>
+                                    <td>Həsənqulu Məmmədbəyov</td>
+                                    <td>29.08.2018 / 12:47</td>
+                                    <td>
+                                        <span class="row-dot" style="background-color: #f15b40"></span>Əməliyyat</td>
+                                    <td>994 12 499 88 77</td>
+                                    <td>Əliməmməd Həsənzadə</td>
+                                    <td>file</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <!--script-->
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/Chart.min.js"></script>
+    <script src="./assets/js/datatables.min.js"></script>
+    <script src="./assets/js/dataTables.buttons.min.js"></script>
+    <script src="./assets/js/buttons.flash.min.js"></script>
+    <script src="./assets/js/jszip.min.js"></script>
+    <script src="./assets/js/buttons.html5.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script>
+        //chart
+        let mychart = document.getElementById('doughnut-chart').getContext('2d');
+        Chart.defaults.global.defaultFontFamily = 'Helvetica';
+        Chart.defaults.global.defaultFontColor = '#9298a4';
+
+        let lineChart = new Chart(mychart, {
+            type: 'doughnut', //type of chart
+            data: {
+                labels: [
+                    'Əməliyyat',
+                    'Səhvən',
+                    'Cavab gözləyən',
+                    'Təcili'],
+                datasets: [{
+                    data: [
+                        30,
+                        20,
+                        30,
+                        20
+                    ],
+                    backgroundColor: [
+                        '#f15b40',
+                        '#5fcb75',
+                        '#0085d4',
+                        '#feb238'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                scales: {
+                    Axes: [{
+                        gridLines: {
+                            display: false
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
+                },
+                cutoutPercentage: 75
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+select[name=call-history_length] {
+    background-color: white;
+    border-radius: 3px;
+    padding: 6px 10px;
+    line-height: 14px;
+    border: none;
+    font-weight: 400;
+}
+
+.dataTables_length>label {
+    position: absolute;
+    right: 15px;
+    top: -60px;
+}
+
+.dataTables_paginate {
+    float: right;
+    margin-bottom: 40px;
+    a {
+        line-height: 14px;
+        border-radius: 3px;
+        padding: 12px 13px;
+        background-color: white;
+        margin-right: 2px;
+        margin-left: 2px;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+}
+
+.buttons-excel {
+    position: absolute;
+    right: 15px;
+    top: -60px;
+}
+
+tbody {
+    tr {
+        td{
+            &:last-child {
+                padding: 0 13px !important
+            }
+        }
+    }
+}
